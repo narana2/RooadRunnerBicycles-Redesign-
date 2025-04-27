@@ -1,0 +1,867 @@
+/* Global Variables */
+:root {
+    --primary-blue: #005BB5;
+    --accent-orange: #FF6600;
+    --text-dark: #222222;
+    --bg-light: #F5F5F5;
+    --white: #FFFFFF;
+
+    --font-family: 'Inter', sans-serif;
+
+    --h1-size: 48px;
+    --h1-line-height: 56px;
+    --h1-weight: 700; /* Bold */
+
+    --h2-size: 32px;
+    --h2-line-height: 40px;
+    --h2-weight: 600; /* SemiBold */
+
+    --body-size: 16px;
+    --body-line-height: 24px;
+    --body-weight: 400; /* Regular */
+
+    --small-size: 14px;
+    --small-line-height: 20px;
+    --small-weight: 400; /* Regular */
+
+    --gutter: 24px;
+    --margin-horizontal: 96px;
+    --header-height: 80px;
+    --button-height: 48px;
+    --button-radius: 16px;
+    --button-padding-vertical: 12px; /* Calculated approx */
+    --button-padding-horizontal: 24px;
+}
+
+/* Basic Resets & Defaults */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2 {
+    color: var(--text-dark);
+}
+
+h1 {
+    font-size: var(--h1-size);
+    line-height: var(--h1-line-height);
+    font-weight: var(--h1-weight);
+}
+
+h2 {
+    font-size: var(--h2-size);
+    line-height: var(--h2-line-height);
+    font-weight: var(--h2-weight);
+}
+
+.body-text {
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    font-weight: var(--body-weight);
+}
+
+.small-text {
+    font-size: var(--small-size);
+    line-height: var(--small-line-height);
+    font-weight: var(--small-weight);
+}
+
+/* Container */
+.container {
+    max-width: 1440px; /* Desktop size */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--margin-horizontal);
+    padding-right: var(--margin-horizontal);
+}
+
+/* Header */
+.site-header {
+    height: var(--header-height);
+    background-color: var(--white);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+}
+
+.logo a {
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    transition: color 0.2s ease;
+}
+
+.logo a:hover {
+    color: var(--accent-orange);
+}
+
+.logo a:before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    background-color: var(--accent-orange);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.logo a:hover:before {
+    transform: scale(1.1);
+}
+
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.main-nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: calc((var(--header-height) - var(--body-line-height)) / 2) 0;
+    display: inline-block;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-blue);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: calc((var(--header-height) - var(--body-line-height)) / 2 - 8px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-blue);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+    transform-origin: center;
+}
+
+.main-nav a:hover::after {
+    transform: scaleX(0.7);
+}
+
+.main-nav a.active::after {
+    transform: scaleX(1);
+}
+
+.site-header .button {
+    padding: 10px 20px;
+    border-radius: 24px;
+    transition: all 0.2s ease;
+}
+
+.site-header .primary-button {
+    background-color: var(--primary-blue);
+    font-weight: 600;
+    color: white;
+    border: 2px solid transparent;
+}
+
+.site-header .primary-button:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    transform: translateY(0);
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: var(--button-radius);
+    padding: var(--button-padding-vertical) var(--button-padding-horizontal);
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+    font-weight: var(--h2-weight); /* SemiBold */
+    line-height: 1; /* Ensure consistent height */
+    height: var(--button-height);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.primary-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.primary-button:hover {
+    background-color: #004a9a; /* Darker shade */
+    transform: translateY(-1px);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--white);
+    background-image: linear-gradient(to bottom, var(--white), #f7f9fc);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hero-content {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+    font-size: 56px;
+    line-height: 1.2;
+    color: var(--primary-blue);
+}
+
+.hero .body-text {
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.hero .primary-button {
+    padding: 14px 36px;
+    font-size: 18px;
+    border-radius: 28px;
+    background-color: var(--accent-orange);
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+}
+
+.hero .primary-button:hover {
+    background-color: #FF5500;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 102, 0, 0.3);
+}
+
+/* Quick Rent Carousel Placeholder */
+.quick-rent-carousel {
+    padding: 40px 0;
+}
+
+.quick-rent-carousel h2 {
+     margin-bottom: 24px;
+}
+
+.carousel-container {
+    display: flex;
+    gap: var(--gutter);
+    overflow-x: auto; /* Enable horizontal scroll */
+    padding-bottom: 16px; /* Space for scrollbar */
+
+    /* Hide scrollbar visually */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+.bike-card-placeholder {
+    min-width: 360px; /* Match BikeCard width */
+    height: 280px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #555;
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Bike Card Component */
+.bike-card {
+    width: 360px;
+    /* height: 280px; -- Let content define height slightly for flexibility */
+    min-height: 280px; /* Ensure minimum height */
+    background-color: var(--white);
+    border-radius: 8px; /* Softer radius for cards */
+    overflow: hidden; /* Ensure image respects radius */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    flex-shrink: 0; /* Prevent cards from shrinking in flex container */
+}
+
+.bike-card__image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Cover the area without distortion */
+    background-color: #eee; /* Placeholder bg */
+    display: block;
+}
+
+.bike-card__content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to fill remaining space */
+}
+
+.bike-card__title {
+    font-size: var(--h2-size);
+    line-height: var(--h2-line-height);
+    font-weight: var(--h2-weight);
+    margin-bottom: 8px;
+}
+
+.bike-card__price {
+    font-size: var(--body-size);
+    line-height: var(--body-line-height);
+    color: var(--accent-orange);
+    font-weight: var(--h2-weight); /* SemiBold price */
+    margin-bottom: 12px;
+}
+
+.bike-card__icon-row {
+    display: flex;
+    gap: 16px; /* Space between icon groups */
+    margin-bottom: 16px;
+    margin-top: auto; /* Push icons and button towards bottom */
+}
+
+.bike-card__icon-group {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Space between icon and label */
+}
+
+.bike-card__icon {
+    width: 24px;
+    height: 24px;
+    /* Add styles for actual icons later (e.g., background image, SVG) */
+    background-color: #ccc; /* Placeholder */
+    border-radius: 4px;
+}
+
+.bike-card__icon-label {
+    font-size: var(--small-size);
+    line-height: var(--small-line-height);
+    color: var(--text-dark);
+}
+
+.bike-card .button {
+    width: 100%; /* Make button full width within card */
+}
+
+/* Footer Placeholder */
+.site-footer-placeholder {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* Rentals List Page */
+.page-header {
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    background-color: var(--white);
+    padding: 16px 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sort-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.sort-dropdown::after {
+    content: "▼";
+    font-size: 10px;
+    color: var(--text-dark);
+}
+
+.date-picker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.date-picker-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc; /* Placeholder for calendar icon */
+}
+
+/* Grid Layout for Rentals */
+.bike-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: var(--gutter); /* 24px gaps between items */
+    margin-bottom: 40px;
+}
+
+.bike-grid .bike-card {
+    width: 100%; /* Fill grid cell */
+}
+
+/* Bike Detail Page */
+.bike-detail {
+    display: flex;
+    gap: var(--gutter);
+    margin-top: 32px;
+}
+
+.bike-detail__left {
+    flex: 0 0 60%; /* 60% width, don't grow or shrink */
+}
+
+.bike-detail__right {
+    flex: 0 0 35%; /* 35% width, don't grow or shrink */
+    position: relative; /* For the sticky panel */
+}
+
+.bike-detail__image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background-color: #eee; /* Placeholder color */
+}
+
+.bike-detail__panel {
+    padding: 24px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: calc(var(--header-height) + 24px); /* Header height + some spacing */
+}
+
+.bike-detail__title {
+    margin-bottom: 16px;
+}
+
+.bike-detail__price {
+    color: var(--accent-orange);
+    font-size: 24px;
+    font-weight: var(--h2-weight);
+    margin-bottom: 24px;
+}
+
+.bike-detail__icon-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.bike-detail__icon-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.bike-detail__icon {
+    width: 24px;
+    height: 24px;
+    background-color: #ccc; /* Placeholder for icon */
+    border-radius: 4px;
+}
+
+.bike-detail__description {
+    margin: 16px 0;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.bike-detail__sizing,
+.bike-detail__accessories {
+    margin-bottom: 24px;
+}
+
+.bike-detail__sizing h3,
+.bike-detail__accessories h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-blue);
+}
+
+.bike-detail__sizing ul,
+.bike-detail__accessories ul {
+    list-style-type: none;
+    padding-left: 4px;
+}
+
+.bike-detail__sizing li,
+.bike-detail__accessories li {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.bike-detail__sizing li:before,
+.bike-detail__accessories li:before {
+    content: "•";
+    color: var(--accent-orange);
+    display: inline-block;
+    width: 1em;
+    margin-right: 6px;
+}
+
+.bike-detail__sizing .size-note {
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 8px;
+    color: #666;
+}
+
+.secondary-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 16px;
+    position: relative;
+}
+
+.secondary-link:hover {
+    text-decoration: underline;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Above header */
+}
+
+.modal {
+    width: 800px;
+    max-width: 90vw;
+    max-height: 80vh;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__header {
+    padding: 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal__content {
+    padding: 24px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.modal__footer {
+    padding: 16px 24px;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+/* Confirmation Modal Styles */
+.confirmation-details {
+    margin: 24px 0;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.confirmation-details p {
+    margin-bottom: 12px;
+}
+
+.confirmation-details p:last-child {
+    margin-bottom: 0;
+}
+
+/* Booking Steps */
+.booking-container {
+    max-width: 800px;
+    margin: 32px auto 60px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.booking-container h2 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Calendar Widget for Booking Step 1 */
+.calendar-widget {
+    width: 600px;
+    height: 400px;
+    margin: 0 auto 32px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    /* This would be replaced with actual calendar styling */
+}
+
+.calendar-month {
+    text-align: center;
+    margin-bottom: 16px;
+    font-weight: var(--h2-weight);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-day-header {
+    text-align: center;
+    font-weight: var(--h2-weight);
+    padding: 8px 0;
+}
+
+.calendar-day {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #e0e0e0;
+}
+
+.calendar-day.selected {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.calendar-day.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+.booking-action {
+    text-align: center;
+    margin-top: 32px;
+}
+
+/* Form Styles for Booking Step 2 */
+.booking-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: var(--font-family);
+    font-size: var(--body-size);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(0, 91, 181, 0.2);
+}
+
+.button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Services Page Styles */
+.services-container {
+    max-width: 800px;
+    margin: 32px auto 60px;
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 32px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.services-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.address-block, .hours-block {
+    padding: 24px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.address-block h3, .hours-block h3 {
+    margin-bottom: 16px;
+    color: var(--primary-blue);
+    font-size: 24px;
+}
+
+.address-block p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours-table tr {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.hours-table tr:last-child {
+    border-bottom: none;
+}
+
+.hours-table td {
+    padding: 12px 8px;
+    font-size: 16px;
+}
+
+.hours-table td:first-child {
+    font-weight: 600;
+    width: 160px;
+}
+
+.rental-info {
+    padding: 24px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-orange);
+}
+
+.rental-info h3 {
+    margin-bottom: 16px;
+    color: var(--accent-orange);
+    font-size: 24px;
+}
+
+.rental-info p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.rental-info ul {
+    margin-left: 24px;
+    margin-top: 12px;
+    list-style-type: disc;
+}
+
+.rental-info li {
+    margin-bottom: 8px;
+}
+
+.back-link {
+    margin-top: 16px;
+    text-align: center;
+} 

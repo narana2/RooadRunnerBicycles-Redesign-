@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Information - Road Runner Bicycles</title>
+    <!-- Link Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RoadRunner</a> <!-- Placeholder -->
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rentals-list.html" class="active">Rentals</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </nav>
+            <a href="#my-reservation" class="button primary-button">My Reservation</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="booking-container">
+                <h2>Your Information</h2>
+                
+                <form class="booking-form" id="rider-info-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="(555) 123-4567" required>
+                    </div>
+                    
+                    <div class="booking-action">
+                        <button type="submit" class="button primary-button">Confirm Reservation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer-placeholder">
+        <div class="container">
+            <!-- Basic Footer Content Placeholder -->
+            <p>&copy; 2025 Road Runner Bicycles. Google-Sites Notice.</p>
+        </div>
+    </footer>
+
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html> 

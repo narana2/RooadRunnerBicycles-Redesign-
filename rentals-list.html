@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rentals - Road Runner Bicycles</title>
+    <!-- Link Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RoadRunner</a> <!-- Placeholder -->
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rentals-list.html" class="active">Rentals</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </nav>
+            <a href="#my-reservation" class="button primary-button">My Reservation</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <header class="page-header">
+                <h2>Available Bikes for One-Day Rental</h2>
+            </header>
+
+            <div class="filter-bar">
+                <div class="sort-dropdown">
+                    <span>Sort by: </span>
+                    <strong>Price</strong>
+                </div>
+                <div class="date-picker">
+                    <div class="date-picker-icon"></div>
+                    <span>April 30, 2025</span>
+                </div>
+            </div>
+
+            <div class="bike-grid">
+                <!-- Grid of Bike Cards -->
+                <article class="bike-card">
+                    <img src="placeholder-image.jpg" alt="Mountain Bike" class="bike-card__image">
+                    <div class="bike-card__content">
+                        <h3 class="bike-card__title">Mountain Bike</h3>
+                        <p class="bike-card__price">$50 / day</p>
+                        <a href="bike-detail.html?id=1" class="button primary-button">Learn More</a>
+                    </div>
+                </article>
+
+                <article class="bike-card">
+                    <img src="placeholder-image.jpg" alt="Road Bike" class="bike-card__image">
+                    <div class="bike-card__content">
+                        <h3 class="bike-card__title">Road Bike</h3>
+                        <p class="bike-card__price">$55 / day</p>
+                        <a href="bike-detail.html?id=2" class="button primary-button">Learn More</a>
+                    </div>
+                </article>
+
+                <article class="bike-card">
+                    <img src="placeholder-image.jpg" alt="Cruiser Bike" class="bike-card__image">
+                    <div class="bike-card__content">
+                        <h3 class="bike-card__title">Cruiser Bike</h3>
+                        <p class="bike-card__price">$45 / day</p>
+                        <a href="bike-detail.html?id=3" class="button primary-button">Learn More</a>
+                    </div>
+                </article>
+
+                <article class="bike-card">
+                    <img src="placeholder-image.jpg" alt="Hybrid Bike" class="bike-card__image">
+                    <div class="bike-card__content">
+                        <h3 class="bike-card__title">Hybrid Bike</h3>
+                        <p class="bike-card__price">$48 / day</p>
+                        <a href="bike-detail.html?id=4" class="button primary-button">Learn More</a>
+                    </div>
+                </article>
+
+                <article class="bike-card">
+                    <img src="placeholder-image.jpg" alt="E-Bike" class="bike-card__image">
+                    <div class="bike-card__content">
+                        <h3 class="bike-card__title">E-Bike</h3>
+                        <p class="bike-card__price">$65 / day</p>
+                        <a href="bike-detail.html?id=5" class="button primary-button">Learn More</a>
+                    </div>
+                </article>
+
+                <article class="bike-card">
+                    <img src="placeholder-image.jpg" alt="Kids Bike" class="bike-card__image">
+                    <div class="bike-card__content">
+                        <h3 class="bike-card__title">Kids Bike</h3>
+                        <p class="bike-card__price">$30 / day</p>
+                        <a href="bike-detail.html?id=6" class="button primary-button">Learn More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer-placeholder">
+        <div class="container">
+            <!-- Basic Footer Content Placeholder -->
+            <p>Road Runner Bicycles</p>
+        </div>
+    </footer>
+
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html> 
