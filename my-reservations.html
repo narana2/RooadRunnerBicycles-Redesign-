@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Reservations - Road Runner Bicycles</title>
+    <!-- Link Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html">RoadRunner</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rentals-list.html">Rentals</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </nav>
+            <a href="my-reservations.html" class="button primary-button active">My Reservations</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <header class="page-header">
+                <h2>My Reservations</h2>
+            </header>
+
+            <div class="reservation-section">
+                <h3>Current Reservations</h3>
+                <div class="reservation-card">
+                    <div class="reservation-info">
+                        <div class="reservation-header">
+                            <h4>Reservation #RRB1234</h4>
+                            <span class="reservation-status active">Active</span>
+                        </div>
+                        <div class="reservation-details">
+                            <div class="reservation-period">
+                                <p><strong>Pickup:</strong> April 30, 2025 - 11:00 AM</p>
+                                <p><strong>Return:</strong> May 1, 2025 - 5:00 PM</p>
+                            </div>
+                            <div class="reservation-bikes">
+                                <p><strong>1x</strong> Giant Contend AR 1</p>
+                                <p><strong>Accessories:</strong> Helmet, Lock</p>
+                            </div>
+                            <div class="reservation-price">
+                                <p><strong>Total:</strong> $67.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-actions">
+                        <button class="button secondary-button">Modify</button>
+                        <button class="button danger-button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reservation-section">
+                <h3>Past Reservations</h3>
+                <div class="reservation-card">
+                    <div class="reservation-info">
+                        <div class="reservation-header">
+                            <h4>Reservation #RRB1122</h4>
+                            <span class="reservation-status completed">Completed</span>
+                        </div>
+                        <div class="reservation-details">
+                            <div class="reservation-period">
+                                <p><strong>Pickup:</strong> March 15, 2025 - 10:30 AM</p>
+                                <p><strong>Return:</strong> March 16, 2025 - 4:45 PM</p>
+                            </div>
+                            <div class="reservation-bikes">
+                                <p><strong>2x</strong> Hybrid Bikes</p>
+                                <p><strong>Accessories:</strong> Helmets (2), Locks (2)</p>
+                            </div>
+                            <div class="reservation-price">
+                                <p><strong>Total:</strong> $108.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-actions">
+                        <button class="button primary-button">Book Again</button>
+                    </div>
+                </div>
+
+                <div class="reservation-card">
+                    <div class="reservation-info">
+                        <div class="reservation-header">
+                            <h4>Reservation #RRB1079</h4>
+                            <span class="reservation-status completed">Completed</span>
+                        </div>
+                        <div class="reservation-details">
+                            <div class="reservation-period">
+                                <p><strong>Pickup:</strong> February 8, 2025 - 11:00 AM</p>
+                                <p><strong>Return:</strong> February 10, 2025 - 5:30 PM</p>
+                            </div>
+                            <div class="reservation-bikes">
+                                <p><strong>1x</strong> Giant Stance</p>
+                                <p><strong>Accessories:</strong> Helmet</p>
+                            </div>
+                            <div class="reservation-price">
+                                <p><strong>Total:</strong> $116.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-actions">
+                        <button class="button primary-button">Book Again</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer-placeholder">
+        <div class="container">
+            <!-- Basic Footer Content Placeholder -->
+            <p>Road Runner Bicycles</p>
+        </div>
+    </footer>
+    
+    <!-- Include the JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html> 
