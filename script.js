@@ -184,69 +184,12 @@ function confirmBooking(formData) {
     });
 }
 
-// Initialize placeholder images on page load
+// Function to initialize placeholder images in the prototype
 function initializePlaceholderImages() {
-    const placeholders = document.querySelectorAll('img[src="placeholder-image.jpg"]');
-    
-    placeholders.forEach(img => {
-        // Set a solid color background based on the alt text
-        const altText = img.getAttribute('alt') || '';
-        let bgColor;
-        
-        if (altText.includes('Mountain')) bgColor = '#4CAF50';
-        else if (altText.includes('Road')) bgColor = '#2196F3';
-        else if (altText.includes('Cruiser')) bgColor = '#FF9800';
-        else if (altText.includes('Hybrid')) bgColor = '#9C27B0';
-        else if (altText.includes('E-Bike')) bgColor = '#F44336';
-        else if (altText.includes('Kids')) bgColor = '#FFEB3B';
-        else bgColor = '#607D8B';
-        
-        // Create canvas for the placeholder
-        const canvas = document.createElement('canvas');
-        canvas.width = img.width || 360;
-        canvas.height = img.height || 180;
-        
-        const ctx = canvas.getContext('2d');
-        
-        // Fill background
-        ctx.fillStyle = bgColor;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        // Add bike icon outline
-        ctx.strokeStyle = 'rgba(255,255,255,0.7)';
-        ctx.lineWidth = 3;
-        
-        // Simple bike icon (just a rough sketch)
-        ctx.beginPath();
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        const radius = Math.min(canvas.width, canvas.height) / 5;
-        
-        // Draw wheels
-        ctx.beginPath();
-        ctx.arc(centerX - radius, centerY, radius, 0, 2 * Math.PI);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(centerX + radius, centerY, radius, 0, 2 * Math.PI);
-        ctx.stroke();
-        
-        // Draw frame
-        ctx.beginPath();
-        ctx.moveTo(centerX - radius, centerY);
-        ctx.lineTo(centerX, centerY - radius);
-        ctx.lineTo(centerX + radius, centerY);
-        ctx.lineTo(centerX - radius, centerY);
-        ctx.stroke();
-        
-        // Add bike type text
-        ctx.fillStyle = 'white';
-        ctx.font = 'bold 20px Inter, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
-        ctx.fillText(altText, centerX, centerY + radius + 30);
-        
-        // Replace the img src with the canvas data URL
-        img.src = canvas.toDataURL();
+    // Replace all placeholder-image.jpg with a single placeholder
+    const images = document.querySelectorAll('img[src="placeholder-image.jpg"]');
+    images.forEach(img => {
+        img.src = "images/bike-placeholder.jpg";
     });
 }
 
